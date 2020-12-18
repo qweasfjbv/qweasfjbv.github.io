@@ -1,7 +1,7 @@
 ---
 title: Start Studying Algorithm!
 author: qweasfjbv
-date: 2020-12-18 11:10:00 +0900
+date: 2020-12-18 11:39:00 +0900
 categories: [Algorithm, Start]
 tags: [algorithm]
 toc: true
