@@ -2,8 +2,8 @@
 title: AOJ-PICNIC
 author: qweasfjbv
 date: 2020-12-21 21:53:00 +0900
-categories: [Algorithm, BruteForce]
-tags: [algospot, Problem Solving]
+categories: [Algorithm, Problem Solving]
+tags: [BruteForce]
 toc: false
 ---
 
