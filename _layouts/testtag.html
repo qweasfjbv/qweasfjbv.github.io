@@ -19,7 +19,7 @@ layout: page
 {% for i in (default_beg..default_end) %}
   {% if default.tag == {{ page.title }} %}
     {% assign posts = posts | push: default[i] %}
-  {% endeif %}
+  {% endif %}
 {% endfor %}
 
 
