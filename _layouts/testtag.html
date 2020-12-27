@@ -23,34 +23,6 @@ layout: page
 {% else %}
   {% assign pinned_num = 0 %}
 {% endif %}
-{% assign tagposts = "" | split: "" %}
-{% for tag in site.tags %}
-  {% if tag[0] == page.title}
-    {% for post in tag[1]}
-      {% assign tagposts = tagposts | push: post %}
-    {% endfor %}
-    {% break %}
-  {% endif %}
-{% endfor %}
-
-
-
-{% assign pinned = site.posts | where_exp: "item", "item.pin == true"  %}
-{% assign default = site.posts | where_exp: "item", "item.pin != true"  %}
-{% assign posts = "" | split: "" %}
-
-<!-- Get pinned posts -->
-
-{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign pinned_num = pinned.size | minus: offset %}
-
-{% if pinned_num > 0 %}
-  {% for i in (offset..pinned.size) limit: pinned_num %}
-    {% assign posts = posts | push: pinned[i] %}
-  {% endfor %}
-{% else %}
-  {% assign pinned_num = 0 %}
-{% endif %}
 
 
 <!-- Get default posts -->
