@@ -7,29 +7,108 @@ layout: page
 # MIT Licensed
 ---
 
+{% assign pinned = site.posts | where_exp: "item", "item.pin == true"  %}
+{% assign default = site.posts | where_exp: "item", "item.pin != true"  %}
 {% assign posts = "" | split: "" %}
+
+<!-- Get pinned posts -->
+
+{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
+{% assign pinned_num = pinned.size | minus: offset %}
+
+{% if pinned_num > 0 %}
+  {% for i in (offset..pinned.size) limit: pinned_num %}
+    {% assign posts = posts | push: pinned[i] %}
+  {% endfor %}
+{% else %}
+  {% assign pinned_num = 0 %}
+{% endif %}
+{% assign tagposts = "" | split: "" %}
 {% for tag in site.tags %}
-  {% if category[0] == page.title}
+  {% if tag[0] == page.title}
     {% for post in tag[1]}
-      {% assign posts = posts | push: post %}
+      {% assign tagposts = tagposts | push: post %}
     {% endfor %}
     {% break %}
   {% endif %}
 {% endfor %}
 
-<div id="page-tag">
-  <h1 class="pl-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    {{ page.title }}
-    <span class="lead text-muted pl-2">{{ posts | size }}</span>
-  </h1>
-  <ul class="post-content pl-0">
-    {% for post in posts %}
-    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="dash flex-grow-1"></span>
-      <span class="text-muted small">{{ post.date | date: site.data.date_format.post.long }}</span>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
+
+
+{% assign pinned = site.posts | where_exp: "item", "item.pin == true"  %}
+{% assign default = site.posts | where_exp: "item", "item.pin != true"  %}
+{% assign posts = "" | split: "" %}
+
+<!-- Get pinned posts -->
+
+{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
+{% assign pinned_num = pinned.size | minus: offset %}
+
+{% if pinned_num > 0 %}
+  {% for i in (offset..pinned.size) limit: pinned_num %}
+    {% assign posts = posts | push: pinned[i] %}
+  {% endfor %}
+{% else %}
+  {% assign pinned_num = 0 %}
+{% endif %}
+
+
+<!-- Get default posts -->
+
+{% assign default_beg = offset | minus: pinned.size %}
+
+{% if default_beg < 0 %}
+  {% assign default_beg = 0 %}
+{% endif %}
+
+{% assign default_num = paginator.posts | size | minus: pinned_num  %}
+{% assign default_end = default_beg | plus: default_num | minus: 1 %}
+
+{% if default_num > 0 %}
+  {% for i in (default_beg..default_end) %}
+    {% assign posts = posts | push: default[i] %}
+  {% endfor %}
+{% endif %}
+
+
+<div id="post-list">
+
+{% for post in posts %}
+
+  <div class="post-preview">
+    <div class="d-flex justify-content-between pr-xl-2">
+      <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+      {% if post.pin == true %}
+        <i class="fas fa-thumbtack fa-fw text-muted mt-1 ml-2 mt-xl-2" data-toggle="tooltip" data-placement="left"
+        title="Pinned"></i>
+      {% endif %}
+    </div>
+    <div class="post-content">
+      <p>
+        {% include no-linenos.html content=post.content %}
+        {{ content | markdownify | strip_html | truncate: 200 }}
+      </p>
+    </div>
+
+    <div class="post-meta text-muted">
+      <!-- posted date -->
+      <i class="far fa-clock fa-fw"></i>
+      {% include timeago.html date=post.date tooltip=true %}
+
+      <!-- page views -->
+      {% if site.google_analytics.pv.enabled %}
+      <i class="far fa-eye fa-fw"></i>
+      <span id="pv_{{-post.title-}}" class="pageviews">
+        <i class="fas fa-spinner fa-spin fa-fw"></i>
+      </span>
+      {% endif %}
+    </div>
+  </div> <!-- .post-review -->
+
+{% endfor %}
+
+</div> <!-- #post-list -->
+
+{% if paginator.total_pages > 0 %}
+  {% include post-paginator.html %}
+{% endif %}
