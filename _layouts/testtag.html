@@ -7,21 +7,15 @@ layout: page
 # MIT Licensed
 ---
 
-{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign default = site.posts %}
 {% assign posts = "" | split: "" %}
-
-{% assign default_beg = 0 %}
-
-{% assign default_num = site.posts | size %}
-{% assign default_end = default_beg | plus: default_num | minus: 1 %}
-
-{% for i in (default_beg..default_end) %}
-  {% if default[i].tag == {{ page.title }} %}
-    {% assign posts = posts | push: default[i] %}
+{% for tag in site.tags %}
+  {% if category[0] == page.title}
+    {% for post in tag[1]}
+      {% assign posts = posts | push: post %}
+    {% endfor %}
+    {% break %}
   {% endif %}
 {% endfor %}
-
 
 <div id="page-tag">
   <h1 class="pl-lg-2">
