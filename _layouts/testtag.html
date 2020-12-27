@@ -8,25 +8,19 @@ layout: page
 ---
 
 {% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign default = site.posts | where_exp: "item", "item.pin != true"  %}
+{% assign default = site.posts %}
 {% assign posts = "" | split: "" %}
 
-{% assign default_beg = offset %}
+{% assign default_beg = 0 %}
 
-{% if default_beg < 0 %}
-  {% assign default_beg = 0 %}
-{% endif %}
-
-{% assign default_num = paginator.posts | size %}
+{% assign default_num = site.posts | size %}
 {% assign default_end = default_beg | plus: default_num | minus: 1 %}
 
-{% if default_num > 0 %}
-  {% for i in (default_beg..default_end) %}
-    {% if default.tag == {{ page.title }} %}
-      {% assign posts = posts | push: default[i] %}
-    {% endeif %}
-  {% endfor %}
-{% endif %}
+{% for i in (default_beg..default_end) %}
+  {% if default.tag == {{ page.title }} %}
+    {% assign posts = posts | push: default[i] %}
+  {% endeif %}
+{% endfor %}
 
 
 <div id="page-tag">
