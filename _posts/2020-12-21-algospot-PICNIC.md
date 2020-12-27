@@ -14,8 +14,9 @@ toc: false
 처음엔 반복문으로 할려 했는데 도저히 안풀려서 재귀함수로 구현했다.
 
 ### Wrong Code
+
 ```cpp
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 bool isFriend[10][10] = { false };
@@ -23,7 +24,7 @@ bool hasPartner[10] = { false };
 
 int Match(int n) {
 	int start = -1;
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i &lt; n; i++) {
 		if (!hasPartner[i]) {
 			start = i;
 			break;
@@ -34,7 +35,7 @@ int Match(int n) {
 
 	int ret = 0;
 	// 짝꿍 찾기
-	for (int i = start + 1; i < n; i++) {
+	for (int i = start + 1; i &lt; n; i++) {
 		// start와 친구이고 짝이 없는 사람이어야 함.
 		if (!hasPartner[i] && isFriend[i][start]) {
 			hasPartner[i] = true;
@@ -54,22 +55,22 @@ int main() {
 
 	int C, n, m;
 
-	cin >> C;
+	cin &gt;&gt; C;
 
 	int a, b;
-	for (int t = 0; t < C; t++) {
-		cin >> n >> m;
-		for (int i = 0; i < 10; i++) {
+	for (int t = 0; t &lt; C; t++) {
+		cin &gt;&gt; n &gt;&gt; m;
+		for (int i = 0; i &lt; 10; i++) {
 			hasPartner[i] = false;
 		}
 
-		for (int i = 0; i < m; i++) {
-			cin >> a >> b;
+		for (int i = 0; i &lt; m; i++) {
+			cin &gt;&gt; a &gt;&gt; b;
 			isFriend[a][b] = true;
 			isFriend[b][a] = true;
 		}
 
-		cout << Match(n) << endl;
+		cout &lt;&lt; Match(n) &lt;&lt; endl;
 
 
 	}
@@ -86,7 +87,7 @@ int main() {
 ### Answer
 
 ```cpp
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 // 친구관계 기록하기 위한 배열과 현재 파트너가 있는지 적어두기 위한 배열
@@ -95,7 +96,7 @@ bool hasPartner[10] = { false };
 
 int Match(int n) {
 	int start = -1;
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i &lt; n; i++) {
 		if (!hasPartner[i]) {
 			start = i;
 			break;
@@ -106,7 +107,7 @@ int Match(int n) {
 
 	int ret = 0;
 	// 짝꿍 찾기
-	for (int i = start + 1; i < n; i++) {
+	for (int i = start + 1; i &lt; n; i++) {
 		// start와 친구이고 짝이 없는 사람이어야 함.
 		if (!hasPartner[i] && isFriend[i][start]) {
 			hasPartner[i] = true;
@@ -126,29 +127,29 @@ int main() {
 
 	int C, n, m;
 
-	cin >> C;
+	cin &gt;&gt; C;
 
 	int a, b;
-	for (int t = 0; t < C; t++) {
-		cin >> n >> m;
+	for (int t = 0; t &lt; C; t++) {
+		cin &gt;&gt; n &gt;&gt; m;
 		// 전역변수 초기화
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i &lt; 10; i++) {
 			hasPartner[i] = false;
 		}
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
+		for (int i = 0; i &lt; 10; i++) {
+			for (int j = 0; j &lt; 10; j++) {
 				isFriend[i][j] = false;
 			}
 		}
 
-		for (int i = 0; i < m; i++) {
-			cin >> a >> b;
+		for (int i = 0; i &lt; m; i++) {
+			cin &gt;&gt; a &gt;&gt; b;
 			// 친구관계 기록
 			isFriend[a][b] = true;
 			isFriend[b][a] = true;
 		}
 
-		cout << Match(n) << endl;
+		cout &lt;&lt; Match(n) &lt;&lt; endl;
 
 
 	}
