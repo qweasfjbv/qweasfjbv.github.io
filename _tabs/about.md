@@ -18,13 +18,11 @@ order: 4
 
 {{ site.categories.ProblemSolving | size }}
 
-{{ site.categories[0][0] }} 
+{{ site.categories[0] }} 
 
-{{ site.categories[1][0] }}
+{{ site.categories[1] }}
 
-{{ site.categories[2][0] }}
+{{ site.categories[2] }}
 
-{{ site.categories[3][0] }}
-
-{{ site.categories | size }}
+{{ site.categories[3] }}
 
