@@ -14,4 +14,6 @@ order: 4
 
 {{ site.posts | size }}
 
-{{ site.categories.Blogging | size}}
+{{ site.categories.Blogging | size }}
+
+{{ site.categories.problem-solving | size }}
