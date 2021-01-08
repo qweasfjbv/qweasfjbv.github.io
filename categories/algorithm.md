@@ -1,5 +1,5 @@
 ---
 layout: category
 title: Algorithm
-posts: site.posts
+posts: site.categories.Algorithm
 ---
