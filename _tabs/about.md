@@ -18,7 +18,13 @@ order: 4
 
 {{ site.categories.ProblemSolving | size }}
 
-{% for category in site.categories %}
-    {{ category }}
-    
-{% endfor %}
+{{ site.categories[0][0] }} 
+
+{{ site.categories[1][0] }}
+
+{{ site.categories[2][0] }}
+
+{{ site.categories[3][0] }}
+
+{{ site.categories | size }}
+
