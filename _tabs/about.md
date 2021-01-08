@@ -1,5 +1,6 @@
 ---
 layout: TestCate
+posts: site.categories.Algorithm
 title: About
 icon: fas fa-info
 order: 4
