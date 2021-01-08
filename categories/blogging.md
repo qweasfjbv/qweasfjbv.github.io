@@ -1,5 +1,6 @@
 ---
 layout: category
 title: Blogging
-posts: site.categories.Blogging
 ---
+
+{% assign posts = site.categories.Blogging %}
