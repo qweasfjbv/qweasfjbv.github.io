@@ -1,5 +1,6 @@
 ---
 title: About
+layout: TestCate
 icon: fas fa-info
 order: 4
 
@@ -9,20 +10,4 @@ order: 4
 # © 2017-2019 Cotes Chung
 # MIT License
 ---
-
-{{ site.categories.Algorithm | size }}
-
-{{ site.posts | size }}
-
-{{ site.categories.Blogging | size }}
-
-{{ site.categories.ProblemSolving | size }}
-
-{{ site.categories[0] }} 
-
-{{ site.categories[1] }}
-
-{{ site.categories[2] }}
-
-{{ site.categories[3] }}
 
