@@ -6,7 +6,7 @@ layout: page
 # MIT Licensed
 ---
 
-<div id="page-category">
+<div id="page-test">
   <h1 class="pl-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
     {{ page.title }}
@@ -49,3 +49,7 @@ layout: page
 
 </div>
 
+
+{% if paginator.total_pages > 0 %}
+  {% include post-paginator.html %}
+{% endif %}
