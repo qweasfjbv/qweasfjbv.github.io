@@ -1,5 +1,5 @@
 ---
-layout: TestCate
+layout: category
 title: Algorithm
 posts: site.categories.Algorithm
 ---

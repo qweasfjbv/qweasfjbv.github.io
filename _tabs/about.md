@@ -10,8 +10,6 @@ order: 4
 # MIT License
 ---
 
-{{ page.categories.Algorithm | size }}
-
-{% for post in page.categories.Algorithm %}
-    1. {{ post.title }} </br>
-{% endfor %}
+{{ page.categories.Algorithm | size }} </br>
+{{ site.posts | size }} </br>
+{{ page.categories.Blogging | size}} </br>
