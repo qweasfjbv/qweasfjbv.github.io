@@ -10,6 +10,8 @@ order: 4
 # MIT License
 ---
 
-{{ page.categories.Algorithm | size }} </br>
-{{ site.posts | size }} </br>
-{{ page.categories.Blogging | size}} </br>
+{{ site.categories.Algorithm | size }}
+
+{{ site.posts | size }}
+
+{{ site.categories.Blogging | size}}
