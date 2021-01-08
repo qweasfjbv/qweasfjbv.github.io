@@ -10,4 +10,7 @@ order: 4
 # MIT License
 ---
 
-{{ site.categories.Problem Solving | size }}
+{{ site.categories.Problem-Solving | size }}
+
+{{ site.categories.algorithm | size }}
+
