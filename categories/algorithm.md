@@ -1,4 +1,4 @@
 ---
-layout: Algorithm
+layout: test
 title: Algorithm
 ---
