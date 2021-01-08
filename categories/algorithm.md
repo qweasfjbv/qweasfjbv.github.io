@@ -1,5 +1,4 @@
 ---
-layout: TestCate
+layout: Algorithm
 title: Algorithm
-posts: site.categories.Algorithm
 ---
