@@ -12,6 +12,6 @@ order: 4
 
 {{ page.categories.algorithm | size }}
 
-{% for post in page.categories.algorithm%}
-    {{ post.title }}
+{% for post in page.categories.Algorithm %}
+    1. {{ post.title }} </br>
 {% endfor %}
