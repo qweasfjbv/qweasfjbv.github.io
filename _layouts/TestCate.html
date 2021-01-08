@@ -9,7 +9,9 @@ layout: page
 <div id="page-category">
   <h1 class="pl-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
-    {{ page.posts[0].title }}
+        {% for post in page.posts %}
+            {{ post.title[i] }}
+        {% endfor %}
     <span class="lead text-muted pl-2">{{ page.posts | size }}</span>
   </h1>
 
