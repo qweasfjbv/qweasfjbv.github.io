@@ -1,6 +1,5 @@
 ---
 title: About
-layout: TestCate
 icon: fas fa-info
 order: 4
 
@@ -11,3 +10,4 @@ order: 4
 # MIT License
 ---
 
+{{ site.categories.Problem_Solving | size }}
