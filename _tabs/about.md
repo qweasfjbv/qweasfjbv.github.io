@@ -1,6 +1,5 @@
 ---
 layout: TestCate
-posts: site.categories.Algorithm
 title: About
 icon: fas fa-info
 order: 4
@@ -11,3 +10,4 @@ order: 4
 # © 2017-2019 Cotes Chung
 # MIT License
 ---
+
