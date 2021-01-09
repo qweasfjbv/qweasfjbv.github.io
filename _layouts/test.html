@@ -2,9 +2,6 @@
 layout: page
 ---
 
-{% assign posts = site.posts | where_exe: "item", "item.category == page.cate" %}
-{% assign si = posts | size %}
-
 <div id="page-test">
   <h1 class="pl-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
@@ -12,7 +9,9 @@ layout: page
     <span class="lead text-muted pl-2">{{ si }}</span>
   </h1>
 
-  {% for post in posts %}
+  {% for category in site.categories %}
+    {% if page.cate == category.first %}
+      {% for post in category[1] %}
 
   <div class="post-preview">
     <div class="d-flex justify-content-between pr-xl-2">
@@ -38,8 +37,10 @@ layout: page
       </span>
       {% endif %}
     </div>
-  </div> <!-- .post-review -->
-{% endfor %}
+ </div> <!-- .post-review -->
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
 </div>
 
 {% if si > 10 %}
