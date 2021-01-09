@@ -2,14 +2,16 @@
 layout: page
 ---
 
+{% assign cate = page.cate %}
+
 <div id="page-test">
   <h1 class="pl-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
     {{ page.title }}
-    <span class="lead text-muted pl-2">{{ site.posts | size }}</span>
+    <span class="lead text-muted pl-2">{{ site.categoreis.{{cate}} | size }}</span>
   </h1>
 
-  {% for post in site.categories.Algorithm %}
+  {% for post in site.categories.{{cate}} %}
 
   <div class="post-preview">
     <div class="d-flex justify-content-between pr-xl-2">
