@@ -2,16 +2,22 @@
 layout: page
 ---
 
-{% assign cate = page.cate %}
+{% assign posts = "" | split: "" %}
+
+{% for post in site.posts %}
+  {% if post.category == page.cate %}
+    {% assign posts = posts | push: post %}
+  {% endif %}
+{% endfor %}
 
 <div id="page-test">
   <h1 class="pl-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
     {{ page.title }}
-    <span class="lead text-muted pl-2">{{ site.categoreis.{{cate}} | size }}</span>
+    <span class="lead text-muted pl-2">{{ posts | size }}</span>
   </h1>
 
-  {% for post in site.categories.{{cate}} %}
+  {% for post in posts %}
 
   <div class="post-preview">
     <div class="d-flex justify-content-between pr-xl-2">
