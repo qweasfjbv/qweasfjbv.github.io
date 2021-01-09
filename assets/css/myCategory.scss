@@ -8,23 +8,6 @@
 
 {% include_relative _addon/main.scss %}
 
-#page-category {
-  ul > li {
-    line-height: 1.5rem;
-    padding: 0.6rem 0;
-    &::before { // dot
-      background: #999;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      display: block;
-      content: "";
-      position: relative;
-      top: 0.6rem;
-      margin-right: 0.5rem;
-    }
-  }
-}
 
 #post-list {
   margin-top: 1rem;
