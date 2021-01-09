@@ -1,5 +1,5 @@
 ---
-layout: category
+layout: CategoryTest
 title: Problem Solving
-posts: site.categories.Problem_Solving
+category: Problem Solving
 ---

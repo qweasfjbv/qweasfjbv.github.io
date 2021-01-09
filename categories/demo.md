@@ -1,5 +1,5 @@
 ---
-layout: category
+layout: CategoryTest
 title: Demo
-posts: site.categories.Demo
+category: Demo
 ---
