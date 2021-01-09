@@ -10,7 +10,7 @@ layout: page
   </h1>
 
   {% for category in site.categories %}
-    {% if page.cate == category.first %}
+    {% if page.cate == category[0] %}
       {% for post in category[1] %}
 
   <div class="post-preview">
