@@ -20,8 +20,8 @@
     h1 {
       font-size: 1.4rem;
       margin: 0;
-      padding-bottom: 0.5rem;
-      padding-top: 0.5rem;
+      padding-bottom: 0;
+      padding-top: 0;
       ~i { // pinned icon
         font-size: 0.86rem;
       }
@@ -37,7 +37,7 @@
     }
 
     .post-content {
-      margin-top: 0.6rem;
+      margin-top: 0.3rem;
       margin-bottom: 0.6rem;
       color: var(--post-list-text-color);
       >p {
