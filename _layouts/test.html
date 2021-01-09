@@ -2,15 +2,8 @@
 layout: page
 ---
 
-{% assign posts = "" | split: "" %}
+{% assign posts = site.posts | where_exe: "item", "item.category == page.cate" %}
 
-{% for post in site.posts %}
-  {% for category in post.category %}
-    {%if category == page.cate}
-      {% assign posts = posts | push: post %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
 
 <div id="page-test">
   <h1 class="pl-lg-2">
