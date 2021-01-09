@@ -1,5 +1,5 @@
 ---
-layout: CategoryTest
+layout: test
 title: Blogging
 category: Blogging
 ---
