@@ -3,13 +3,13 @@ layout: page
 ---
 
 {% assign posts = site.posts | where_exe: "item", "item.category == page.cate" %}
-
+{% assign si = posts | size %}
 
 <div id="page-test">
   <h1 class="pl-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
     {{ page.title }}
-    <span class="lead text-muted pl-2">{{ posts | size }}</span>
+    <span class="lead text-muted pl-2">{{ si }}</span>
   </h1>
 
   {% for post in posts %}
@@ -42,6 +42,6 @@ layout: page
 {% endfor %}
 </div>
 
-{% if paginator.total_pages > 0 %}
+{% if si > 10 %}
   {% include post-paginator.html %}
 {% endif %}
