@@ -8,6 +8,7 @@
 
 {% include_relative _addon/main.scss %}
 
+
 #post-list {
   margin-top: 1rem;
   padding-right: 0.5rem;
@@ -35,7 +36,7 @@
     }
 
     .post-content {
-      margin-top: 0.6rem;
+      margin-top: 0.3rem;
       margin-bottom: 0.6rem;
       color: var(--post-list-text-color);
       >p {
