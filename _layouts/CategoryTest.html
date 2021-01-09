@@ -7,6 +7,8 @@ layout: page
 ---
 
 {% for category in site.categories %}
-    {{ page.category }}
-    {{ category[0] }}
+    {% if page.category == category[0] %}
+      {{ page.category }}
+      {{ category[0] }}
+    {% endif %}
 {% endfor %}
