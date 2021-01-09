@@ -1,5 +1,5 @@
 ---
-layout: test
+layout: myCategory
 title: Algorithm
 category: Algorithm
 ---

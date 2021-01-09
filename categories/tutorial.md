@@ -1,5 +1,5 @@
 ---
-layout: test
+layout: myCategory
 title: Tutorial
 category: Tutorial
 ---
