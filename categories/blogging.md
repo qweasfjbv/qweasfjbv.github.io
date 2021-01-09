@@ -1,5 +1,5 @@
 ---
-layout: category
+layout: CategoryTest
 title: Blogging
-posts: site.categories.Blogging
+category: Blogging
 ---

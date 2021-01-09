@@ -3,7 +3,7 @@ layout: page
 ---
 
 {% for category in site.categories %}
-  {% if page.cate == category[0] %}
+  {% if page.category == category[0] %}
 <div id="page-test">
   <h1 class="pl-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
@@ -38,7 +38,7 @@ layout: page
       {% endif %}
     </div>
  </div> <!-- .post-review -->
-      {% endfor %}
+  {% endfor %}
 </div>
   {% endif %}
 {% endfor %}

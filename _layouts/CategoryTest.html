@@ -1,0 +1,12 @@
+---
+layout: page
+# The Category layout
+# v2.0
+# https://github.com/cotes2020/jekyll-theme-chirpy
+# MIT Licensed
+---
+
+{% for category in site.categories %}
+    {{ page.category }}
+    {{ category[0] }}
+{% endfor %}
