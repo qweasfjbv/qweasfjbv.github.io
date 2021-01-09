@@ -2,17 +2,18 @@
 layout: page
 ---
 
+{% for category in site.categories %}
+  {% if page.cate == category[0] %}
+
 <div id="page-test">
   <h1 class="pl-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
     {{ page.title }}
-    <span class="lead text-muted pl-2">{{ si }}</span>
+    <span class="lead text-muted pl-2">{{ category[1] | size }}</span>
   </h1>
 
-  {% for category in site.categories %}
-    {% if page.cate == category[0] %}
-      {% for post in category[1] %}
 
+  {% for post in category[1] %}
   <div class="post-preview">
     <div class="d-flex justify-content-between pr-xl-2">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
@@ -43,6 +44,3 @@ layout: page
   {% endfor %}
 </div>
 
-{% if si > 10 %}
-  {% include post-paginator.html %}
-{% endif %}
