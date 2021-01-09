@@ -1,0 +1,44 @@
+---
+layout: page
+---
+
+{% for tag in site.tags %}
+  {% if page.tag == tag[0] %}
+<div id="page-test">
+  <h1 class="pl-lg-2">
+    <i class="far fa-folder-open fa-fw text-muted"></i>
+    {{ page.title }}
+    <span class="lead text-muted pl-2">{{ tag[1] | size }}</span>
+  </h1>
+
+
+  {% for post in tag[1]] %}
+  <div class="post-preview">
+    <div class="d-flex justify-content-between pr-xl-2">
+      <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+    </div>
+    <div class="post-content">
+      <p>
+        {% include no-linenos.html content=post.content %}
+        {{ content | markdownify | strip_html | truncate: 200 }}
+      </p>
+    </div>
+
+    <div class="post-meta text-muted">
+      <!-- posted date -->
+      <i class="far fa-clock fa-fw"></i>
+      {% include timeago.html date=post.date tooltip=true %}
+
+      <!-- page views -->
+      {% if site.google_analytics.pv.enabled %}
+      <i class="far fa-eye fa-fw"></i>
+      <span id="pv_{{-post.title-}}" class="pageviews">
+        <i class="fas fa-spinner fa-spin fa-fw"></i>
+      </span>
+      {% endif %}
+    </div>
+ </div> <!-- .post-review -->
+  {% endfor %}
+</div>
+  {% endif %}
+{% endfor %}
