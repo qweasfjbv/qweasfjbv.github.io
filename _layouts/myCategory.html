@@ -17,7 +17,7 @@ layout: page
   {% assign posts = "" | split: "" %}
 
   {% for i in (post_beg..post_end) %}
-    {% assign posts = posts | push: default[i] %}
+    {% assign posts = posts | push: category1[1][i] %}
   {% endfor %}
 
 <div id = "post-list">
