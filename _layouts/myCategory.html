@@ -15,9 +15,10 @@ layout: page
   {% assign post_beg = paginator.page | minus: 1 | times: paginator.per_page %}
   {% assign post_end = post_beg | plus: 9 %}
   {% assign posts = "" | split: "" %}
+  {% assign default = category[1] %}
 
   {% for i in (post_beg..post_end) %}
-    {% assign posts = posts | push: category1[1][i] %}
+    {% assign posts = posts | push: default[i] %}
   {% endfor %}
 
 <div id = "post-list">
